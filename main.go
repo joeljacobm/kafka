@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"time"
 )
 
 
@@ -30,6 +29,7 @@ type data struct {
 }
 
 func main()  {
+	
 	fmt.Println("Sending an HTTP GET request to http://dummy.restapiexample.com/api/v1/employees")
 	resp,err := http.Get("http://dummy.restapiexample.com/api/v1/employees")
 	if err!=nil {
@@ -42,6 +42,6 @@ func main()  {
 		panic(err)
 	}
 	Produce(b)
-	time.Sleep(5 * time.Second)
-
+	Consume()
+	
 }
